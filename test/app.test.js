@@ -1,8 +1,8 @@
-import request from 'supertest';
-import app from '../app.js';
+const request = require('supertest');
+const app = require('../app');
 
 describe('GET /', () => {
-  it('should return Hello Jenkins!', async () => {
+  it('responds with Hello Jenkins!', async () => {
     const res = await request(app).get('/');
     expect(res.statusCode).toBe(200);
     expect(res.text).toBe('Hello Jenkins!');
